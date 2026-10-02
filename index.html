@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XAUUSD Liquidity Chart</title>
+    <meta name="description" content="Professional XAU/USD liquidity dashboard with live market data, volume profile, and heatmap." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="side-panel">
+        <div class="brand-wrap">
+          <div class="brand-mark">X</div>
+          <div>
+            <div class="eyebrow">Gold Market</div>
+            <h1>XAU/USD</h1>
+          </div>
+        </div>
+
+        <div class="mini-card accent">
+          <div class="mini-label">Live Price</div>
+          <div class="mini-value" id="miniPrice">--</div>
+          <div class="mini-meta" id="miniDelta">--</div>
+        </div>
+
+        <div class="section-title">Market</div>
+        <div class="metric-list">
+          <div class="metric-row">
+            <span>Open</span>
+            <strong id="statOpen">--</strong>
+          </div>
+          <div class="metric-row">
+            <span>High</span>
+            <strong id="statHigh">--</strong>
+          </div>
+          <div class="metric-row">
+            <span>Low</span>
+            <strong id="statLow">--</strong>
+          </div>
+          <div class="metric-row">
+            <span>Range</span>
+            <strong id="statRange">--</strong>
+          </div>
+          <div class="metric-row">
+            <span>Volume</span>
+            <strong id="statVolume">--</strong>
+          </div>
+        </div>
+
+        <div class="section-title">Liquidity</div>
+        <div class="liquidity-card">
+          <div class="liquid-row">
+            <span>POC</span>
+            <strong id="pocVal">--</strong>
+          </div>
+          <div class="liquid-row">
+            <span>VAH</span>
+            <strong id="vahVal">--</strong>
+          </div>
+          <div class="liquid-row">
+            <span>VAL</span>
+            <strong id="valVal">--</strong>
+          </div>
+        </div>
+
+        <div class="section-title">Status</div>
+        <div class="status-wrap">
+          <span class="status-dot" id="statusDot"></span>
+          <span id="connectionStatus">Connecting…</span>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div class="title-group">
+            <div class="title-tag">Trading Overview</div>
+            <h2>XAU/USD Liquidity Matrix</h2>
+          </div>
+
+          <div class="toolbar">
+            <div class="timeframe-group" id="tf"></div>
+            <div class="toggle-group">
+              <button id="heatmapToggle" class="toggle-btn active">Heatmap</button>
+              <button id="profileToggle" class="toggle-btn active">Profile</button>
+            </div>
+          </div>
+        </header>
+
+        <div class="summary-strip">
+          <div class="summary-card neutral">
+            <label>Last</label>
+            <strong id="lastPrice">--</strong>
+          </div>
+          <div class="summary-card positive">
+            <label>Change</label>
+            <strong id="priceChange">--</strong>
+          </div>
+          <div class="summary-card">
+            <label>Bid/Ask</label>
+            <strong id="bidAsk">-- / --</strong>
+          </div>
+          <div class="summary-card">
+            <label>Spread</label>
+            <strong id="spreadValue">--</strong>
+          </div>
+        </div>
+
+        <section class="chart-panel">
+          <div class="chart-header">
+            <div class="pair-block">
+              <span class="pair-name">PAXG/USDT</span>
+              <span class="pair-sub">via Binance</span>
+            </div>
+            <div class="chart-info">
+              <span id="ohlcDisplay">--</span>
+            </div>
+          </div>
+
+          <div class="chart-stage">
+            <canvas id="chartCanvas"></canvas>
+          </div>
+        </section>
+
+        <section class="bottom-grid">
+          <div class="insight-card">
+            <div class="card-header">
+              <span>Cursor Insight</span>
+              <span class="chip" id="cursorLiquidity">--</span>
+            </div>
+            <div class="insight-body" id="cursorPrice">Hover over chart to inspect liquidity.</div>
+          </div>
+
+          <div class="insight-card">
+            <div class="card-header">
+              <span>Session Range</span>
+              <span class="chip" id="sessionTag">--</span>
+            </div>
+            <div class="insight-body" id="sessionRange">--</div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
